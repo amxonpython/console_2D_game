@@ -24,6 +24,9 @@ public class Main {
             action = scanner.nextLine();
             player.movement(action);
 
+            if (action.equals("exit")){
+                working = false;
+            }
         }
     }
 }
