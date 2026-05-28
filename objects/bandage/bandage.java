@@ -55,13 +55,13 @@ public class bandage {
                             if (!inventory.slot_occupancy[i]){
                                 inventory.Take_an_item(0);
                                 data.the_object_s_existence_b[number] = false;
+                                matrix.setka[coordinate_y][coordinate_x] = "@";
                                 break;
                             }
                             if (inventory.slot_occupancy[i] && i + 1 == inventory.total_slots){
                                 System.out.println("инвентарь занят");
                             }
                         }
-
                     }
                 }
                 if (world.tick > 0){
