@@ -33,7 +33,7 @@ public class bandage {
         }
     }
 
-    public static void create(int coordinate_y, int coordinate_x, int number){
+    public void create(int coordinate_y, int coordinate_x, int number){
         Scanner scanner = new Scanner(System.in);
         boolean the_object_s_existence = data.the_object_s_existence_b[number];
 
