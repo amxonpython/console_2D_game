@@ -3,7 +3,6 @@ import objects.data.data;
 import player.*;
 import world.*;
 
-
 public class zombie {
 
     public int Attack_power = 1;
