@@ -28,6 +28,7 @@ public class world {
 
             if (parameters_player.HP <= 0) {
                 working = false;
+                System.out.println("вы умерли");
                 break;
             }
 
