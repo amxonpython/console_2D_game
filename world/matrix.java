@@ -6,7 +6,7 @@ public class matrix {
     public static void filling(){
         for (int i = 0; i<world.size; i++){
             for (int j = 0; j<world.size; j++){
-                setka[i][j] = "#";
+                setka[i][j] = " ";
             }
         }
     }
