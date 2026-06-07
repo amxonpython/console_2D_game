@@ -40,11 +40,9 @@ public class player {
                     world.error_The_border_of_the_world();
                 }
                 break;
-
             case "e", "E":
                 inventory.interaction();
                 break;
-
         }
     }
 }
