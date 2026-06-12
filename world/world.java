@@ -12,12 +12,11 @@ public class World {
     public static int tick = 0;
 
     public boolean limiter = false;
-
+    boolean working = true;
     public void simulation_of_the_world(String pressed) {
 
 
         Thread threadWorld = new Thread(() ->{
-            boolean working = true;
             parameters_player.standard_settings();
 
             zombie z1 = new zombie();
@@ -35,24 +34,21 @@ public class World {
                     break;
                 }
                 matrix.setka[player.coordinate_y][player.coordinate_x] = "@";
+                z1.NPS();
                 matrix.show();
                 sleep();
 
                 System.out.println("здоровье: " + parameters_player.HP);
                 System.out.println("тик: " + tick);
 
-
                 if (!Objects.equals(pressed, "start") && limiter){
-                    z1.NPS();
-
                     player.movement(pressed);
                     limiter = false;
-                    tick++;
                 }
                 if (pressed.equals("exit")) {
                     working = false;
                 }
-
+                tick++;
             }
         });
         threadWorld.start();
