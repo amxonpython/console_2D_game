@@ -9,35 +9,35 @@ public class player {
 
     public static void movement (String args){
         switch (args){
-            case "a":
+            case "left":
                 if (coordinate_x - parameters_player.speed >= 0){
                     coordinate_x = (coordinate_x - parameters_player.speed);
                 }else {
-                    world.error_The_border_of_the_world();
+                    World.error_The_border_of_the_world();
                 }
                 break;
 
-            case "d":
-                if (coordinate_x + parameters_player.speed < world.size) {
+            case "Really":
+                if (coordinate_x + parameters_player.speed < World.size) {
                     coordinate_x = (coordinate_x + parameters_player.speed);
                 }else {
-                    world.error_The_border_of_the_world();
+                    World.error_The_border_of_the_world();
                 }
                 break;
 
-            case "s":
-                if (coordinate_y + parameters_player.speed < world.size){
+            case "Down":
+                if (coordinate_y + parameters_player.speed < World.size){
                     coordinate_y = (coordinate_y + parameters_player.speed);
                 }else {
-                    world.error_The_border_of_the_world();
+                    World.error_The_border_of_the_world();
                 }
                 break;
 
-            case "w":
+            case "up":
                 if (coordinate_y - parameters_player.speed >= 0){
                     coordinate_y = (coordinate_y - parameters_player.speed);
                 }else {
-                    world.error_The_border_of_the_world();
+                    World.error_The_border_of_the_world();
                 }
                 break;
             case "e", "E":
