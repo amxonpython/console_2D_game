@@ -38,7 +38,7 @@ public class World {
                     break;
                 }
                 matrix.setka[player.coordinate_y][player.coordinate_x] = "@";
-                //z1.NPS();
+                z1.NPS();
                 matrix.show();
 
                 System.out.println("здоровье: " + parameters_player.HP);
