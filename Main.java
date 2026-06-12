@@ -2,8 +2,8 @@ import javax.swing.*;
 import world.*;
 
 public class Main {
+    public static World world = new World();
     public static void main(String[] args) {
-        World world = new World();
 
         world.simulation_of_the_world("start");
 
@@ -24,25 +24,25 @@ public class Main {
         buttonDown.addActionListener(e -> {
             //вниз
             world.limiter = true;
-            world.simulation_of_the_world("Down");
+            signalManagement("Down");
         });
 
         buttonUp.addActionListener(e -> {
             //вверх
             world.limiter = true;
-            world.simulation_of_the_world("up");
+            signalManagement("up");
         });
 
         buttonLeft.addActionListener(e -> {
             //влево
             world.limiter = true;
-            world.simulation_of_the_world("left");
+            signalManagement("left");
         });
 
         buttonReally.addActionListener(e -> {
             //вправо
             world.limiter = true;
-            world.simulation_of_the_world("Really");
+            signalManagement("Really");
         });
 
         frame.add(buttonReally);
@@ -53,5 +53,14 @@ public class Main {
         frame.setSize(800, 600); // ширина и высота
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
+    }
+    public static void signalManagement(String action){
+        boolean work = true;
+        while (work){
+            if (world.expectation){
+                world.simulation_of_the_world(action);
+                work = false;
+            }
+        }
     }
 }
