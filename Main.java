@@ -1,11 +1,13 @@
 import javax.swing.*;
+
+import core.Management;
 import world.*;
 
 public class Main {
-    public static World world = new World();
-    public static void main(String[] args) {
+    public static World world1 = new World();
 
-        world.simulation_of_the_world("start");
+    public static void main(String[] args) {
+        world1.simulation_of_the_world("start");
 
         JFrame frame = new JFrame("Моё окно");
 
@@ -23,26 +25,26 @@ public class Main {
 
         buttonDown.addActionListener(e -> {
             //вниз
-            world.limiter = true;
-            signalManagement("Down");
+            world1.limiter = true;
+            Management.request ("Down", world1.expectation);
         });
 
         buttonUp.addActionListener(e -> {
             //вверх
-            world.limiter = true;
-            signalManagement("up");
+            world1.limiter = true;
+            Management.request ("up", world1.expectation);
         });
 
         buttonLeft.addActionListener(e -> {
             //влево
-            world.limiter = true;
-            signalManagement("left");
+            world1.limiter = true;
+            Management.request("left", world1.expectation);
         });
 
         buttonReally.addActionListener(e -> {
             //вправо
-            world.limiter = true;
-            signalManagement("Really");
+            world1.limiter = true;
+            Management.request("Really", world1.expectation);
         });
 
         frame.add(buttonReally);
@@ -53,14 +55,5 @@ public class Main {
         frame.setSize(800, 600); // ширина и высота
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
-    }
-    public static void signalManagement(String action){
-        boolean work = true;
-        while (work){
-            if (world.expectation){
-                world.simulation_of_the_world(action);
-                work = false;
-            }
-        }
     }
 }
