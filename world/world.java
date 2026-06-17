@@ -1,10 +1,12 @@
 package world;
 
 import NPS.zombie.*;
+import core.Management;
 import objects.bandage.bandage;
 import player.*;
 
 import java.util.Objects;
+import core.Management.*;
 
 public class World {
     public boolean expectation = false;
@@ -15,7 +17,7 @@ public class World {
     public boolean limiter = false;
     boolean working = true;
 
-     zombie z1 = new zombie();
+    zombie z1 = new zombie();
     bandage b1 = new bandage();
 
     public void simulation_of_the_world(String pressed) {
@@ -38,16 +40,12 @@ public class World {
                     break;
                 }
                 matrix.setka[player.coordinate_y][player.coordinate_x] = "@";
-                z1.NPS();
+                //z1.NPS();
                 matrix.show();
 
                 System.out.println("здоровье: " + parameters_player.HP);
                 System.out.println("тик: " + tick);
 
-                if (!Objects.equals(pressed, "start") && limiter){
-                    player.movement(pressed);
-                    limiter = false;
-                }
                 if (pressed.equals("exit")) {
                     working = false;
                 }
